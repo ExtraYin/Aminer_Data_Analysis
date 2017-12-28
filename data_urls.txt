@@ -1,3 +1,0 @@
-https://static.aminer.org/lab-datasets/citation/dblp.v9.zip
-https://static.aminer.org/lab-datasets/citation/acm.v9.zip
-http://doc.argcv.com/AMinerNetwork/AMiner-Author.zip

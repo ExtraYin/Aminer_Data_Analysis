@@ -1,25 +1,25 @@
 
-create table ACM ( 
-  paper_index INTEGER PRIMARY KEY NOT NULL,   -- index id of this paper
-  paper_title TEXT NOT NULL,  -- paperTitle
-  year DATE,               -- Year
-  publication_venue TEXT,  -- publication venue
-  abstract TEXT            -- Abstract
+create table DBLP_V10 ( 
+  paper_id TEXT PRIMARY KEY NOT NULL,   -- index id of this paper
+  paper_title TEXT,   -- paperTitle
+  year DATE,      -- Year
+  venue TEXT,     -- publication venue
+  abstract TEXT   -- Abstract
 );
 
-create table ACM_AUTHOR  (
-  paper_index INTEGER NOT NULL, 
+create table DBLP_V10_AUTHOR (
+  paper_id TEXT NOT NULL, 
   author_name TEXT, 
-  FOREIGN KEY(paper_index) REFERENCES acm(paper_index)
+  FOREIGN KEY(paper_id) REFERENCES DBLP_V10(paper_id)
 );  
 
-create table ACM_CITATION (
-  paper_index INTEGER NOT NULL, 
+create table DBLP_V10_CITATION (
+  paper_id TEXT NOT NULL, 
   reference_id TEXT NOT NULL,   -- the id of references of this paper
-  FOREIGN KEY(paper_index) REFERENCES acm(paper_index), 
-  FOREIGN KEY(reference_id) REFERENCES acm(paper_index)
+  FOREIGN KEY(paper_id) REFERENCES DBLP_V10(paper_id)
 );
 
+/*
 create table AUTHOR (
   author_index INTEGER PRIMARY KEY NOT NULL,      -- index id of this author
   author_name TEXT NOT NULL,   -- name  (separated by semicolons)
@@ -31,3 +31,4 @@ create table AUTHOR (
   up_index REAL CHECK(up_index>=0),                    -- the P-index with unequal A-index of this author
   keyterm TEXT    -- extracted keyterms of this author  (separated by semicolons)
 );
+*/
